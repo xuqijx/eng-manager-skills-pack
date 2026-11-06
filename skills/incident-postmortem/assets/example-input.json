@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "fictional": true,
+    "source": "hand-written example for this repository"
+  },
+  "disclaimer": "FICTIONAL EXAMPLE. Not a real company, team, incident, metric, or person. Organization: Fictional Harbor Labs.",
+  "title": "Staging export worker restart loop",
+  "service": "Harbor Notes export worker",
+  "severity": "SEV-3 (label supplied in the notes)",
+  "status": "Draft",
+  "window": "2026-02-18 16:40 to 17:25",
+  "timezone": "America/Los_Angeles",
+  "customer_identifiers": "None included.",
+  "summary": "On 2026-02-18 the staging export worker restarted in a loop for 45 minutes after export_page_size was set to 0 during drill DR-44. Production did not serve this traffic.",
+  "impact": [
+    "12 fictional internal test accounts could not finish an export for 45 minutes.",
+    "The notes state that no production traffic used this worker during the window."
+  ],
+  "detection": "Staging alert, export worker restarts greater than 5 in 10 minutes, fired at 16:42 America/Los_Angeles.",
+  "timeline": [
+    {
+      "time": "16:40",
+      "event": "Page size flag export_page_size was set to 0 in staging for drill DR-44."
+    },
+    {
+      "time": "16:42",
+      "event": "Staging alert, export worker restarts greater than 5 in 10 minutes, fired."
+    },
+    {
+      "time": "16:55",
+      "event": "The on-call check confirmed the restarting worker was the staging worker."
+    },
+    {
+      "time": "17:20",
+      "event": "Staging page size was set back to 100. Worker restarts stopped."
+    },
+    {
+      "time": "17:25",
+      "event": "A test export for the 12 fictional internal test accounts succeeded."
+    }
+  ],
+  "contributing_factors": [
+    {
+      "confidence": "Confirmed",
+      "statement": "The worker treated export_page_size 0 as retry immediately. The fictional notes show the flag at 0 from 16:40 until 17:20."
+    },
+    {
+      "confidence": "Hypothesis",
+      "statement": "A production deploy caused the restarts. No production deploy is in the notes for this window, so this remains a hypothesis."
+    }
+  ],
+  "what_worked": [
+    "The staging alert fired two minutes after the flag changed.",
+    "The worker served no production traffic."
+  ],
+  "what_was_slow": [
+    "The drill checklist did not say that page size 0 is invalid, so the flag stayed at 0 until 17:20."
+  ],
+  "action_items": [
+    {
+      "action": "Reject export_page_size below 1 when the worker starts, and add a test for 0.",
+      "owner": "Sam Patel (fictional software engineer)",
+      "due": "2026-02-25",
+      "status": "Open"
+    },
+    {
+      "action": "Add the invalid page-size case to the staging drill checklist.",
+      "owner": "Riley Chen (fictional engineering manager)",
+      "due": "2026-02-27",
+      "status": "Open"
+    }
+  ],
+  "drafting_notes": "This draft is as of 2026-02-18. It is not the March release record. Leave the status at Draft until a review accepts it."
+}
