@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "fictional": true,
+    "source": "hand-written example for this repository"
+  },
+  "disclaimer": "FICTIONAL EXAMPLE. Not a real company, team, incident, metric, or person. Organization: Fictional Harbor Labs.",
+  "release": "harbor-notes 2026.03.11",
+  "environment": "production",
+  "owner": "Riley Chen (fictional engineering manager)",
+  "window": "2026-03-11 10:00-12:00 America/Los_Angeles",
+  "scope": [
+    "Export pagination for result sets past 500 records.",
+    "Reject a page size below 1 when the worker starts."
+  ],
+  "out_of_scope": [
+    "New public API fields.",
+    "A production data backfill."
+  ],
+  "checks": [
+    {
+      "name": "Page-size guard",
+      "status": "Ready",
+      "evidence": "Staging verification on 2026-03-10 ran build 2026.03.04.1, refused page size 0, and left the previous worker running.",
+      "owner": "Sam Patel (fictional software engineer)"
+    },
+    {
+      "name": "Rollback practiced",
+      "status": "Ready",
+      "evidence": "On 2026-03-04 the team restored staging page size 100 and redeployed build 2026.02.18.2 using the steps posted before the practice.",
+      "owner": "Alex Morgan (fictional software engineer)"
+    },
+    {
+      "name": "Support macros reviewed",
+      "status": "Ready",
+      "evidence": "Jordan Lee (fictional support lead) signed the macro text on 2026-03-09.",
+      "owner": "Jordan Lee (fictional support lead)"
+    },
+    {
+      "name": "Restart alert still armed",
+      "status": "Ready",
+      "evidence": "The staging restart alert fired during drill DR-44 on 2026-02-18, and the notes say it remains enabled.",
+      "owner": "Riley Chen (fictional engineering manager)"
+    },
+    {
+      "name": "Scope matches the release notes",
+      "status": "Ready",
+      "evidence": "The fictional release notes list pagination and the page-size guard only.",
+      "owner": "Riley Chen (fictional engineering manager)"
+    }
+  ],
+  "decision": "Go",
+  "decision_note": "Every check is Ready. This go decision covers the 2026-03-11 production window only.",
+  "accepted_risk": "",
+  "watch_duration": "2 hours",
+  "watch_owner": "Sam Patel (fictional software engineer)",
+  "watch_signals": [
+    "Export error rate above 2% for 10 minutes pages the fictional primary on-call.",
+    "Worker restarts above 5 in 10 minutes pages the same on-call."
+  ],
+  "drafting_notes": "Do not announce the release outside the fictional partner channel until the watch window ends."
+}

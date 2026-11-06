@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "fictional": true,
+    "source": "hand-written example for this repository"
+  },
+  "disclaimer": "FICTIONAL EXAMPLE. Not a real company, team, incident, metric, or person. Organization: Fictional Harbor Labs.",
+  "report": "Alex Morgan (fictional software engineer)",
+  "manager": "Riley Chen (fictional engineering manager)",
+  "relationship": "direct report",
+  "date": "2026-03-04",
+  "duration": "30 minutes",
+  "their_topics": [
+    "Wants to lead the export pagination design review.",
+    "Wants a clear date for when the on-call rotation starts this quarter."
+  ],
+  "manager_topics": [
+    "Share the 2026-03-04 observation about posting rollback steps before the practice.",
+    "Agree how the design review fits with on-call shadowing."
+  ],
+  "feedback": [
+    {
+      "direction": "manager to report",
+      "situation": "On 2026-03-04, before the staging rollback practice for Harbor Notes.",
+      "behavior": "Alex Morgan posted the rollback steps in the incident channel before the practice started.",
+      "impact": "Support followed the written steps and did not need a side channel."
+    }
+  ],
+  "career_note": "Alex Morgan (fictional software engineer) asked to lead the export pagination design review. This note is not a promotion decision.",
+  "shared_commitments": [
+    {
+      "owner": "Alex Morgan (fictional software engineer)",
+      "action": "Draft the pagination design review notes",
+      "when": "2026-03-11"
+    },
+    {
+      "owner": "Riley Chen (fictional engineering manager)",
+      "action": "Confirm the on-call start date with the rotation owner",
+      "when": "2026-03-06"
+    }
+  ],
+  "shared_note_excludes": [
+    "A Thursday afternoon personal appointment stays in the private section."
+  ],
+  "private_notes": [
+    "Alex Morgan has a dentist appointment on Thursday afternoon. Keep it here unless Alex agrees to share it. Do not infer anything about health."
+  ]
+}
